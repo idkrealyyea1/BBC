@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BBC English Academy — Master English with Confidence. Premium English language courses for all levels." />
+  <title>BBC English Academy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-bbc">BBC</span>
+        <span class="loader-text">English Academy</span>
+      </div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bbc">BBC</span>
+        <span class="logo-sub">English Academy</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#courses" class="nav-link">Courses</a></li>
+        <li><a href="#teachers" class="nav-link">Teachers</a></li>
+        <li><a href="#testimonials" class="nav-link">Success Stories</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <div class="floating-elements">
+      <div class="float-el el-1">A</div>
+      <div class="float-el el-2">B</div>
+      <div class="float-el el-3">C</div>
+      <div class="float-el el-4">✦</div>
+      <div class="float-el el-5">❝</div>
+      <div class="float-el el-6">✦</div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge reveal-fade">Premium English Education</div>
+      <h1 class="hero-title reveal-fade">
+        Master English<br />
+        <span class="hero-accent">With Confidence</span>
+      </h1>
+      <p class="hero-subtitle reveal-fade">
+        Join BBC English Academy and learn English through modern teaching methods,<br class="hide-mobile" />
+        expert instructors, and interactive learning experiences designed for all levels.
+      </p>
+      <div class="hero-buttons reveal-fade">
+        <a href="#courses" class="btn btn-primary">
+          <span>Start Learning</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#courses" class="btn btn-outline">Explore Courses</a>
+      </div>
+      <div class="hero-stats reveal-fade">
+        <div class="hero-stat"><strong>10K+</strong><span>Students</span></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><strong>98%</strong><span>Satisfaction</span></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><strong>500+</strong><span>Graduates / Year</span></div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Who We Are</span>
+        <h2 class="section-title">Excellence in <span class="accent">English Education</span></h2>
+        <p class="section-subtitle">A world-class institution built on decades of teaching experience and a commitment to transforming students into confident English speakers.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-content reveal">
+          <h3>Our Mission</h3>
+          <p>At BBC English Academy, we believe every student deserves access to world-class English education. Our mission is to bridge language barriers and unlock global opportunities for learners at every stage of their journey.</p>
+          <h3>Our Vision</h3>
+          <p>We envision a world where language is never a barrier — where every student walks out of our doors ready to thrive in any international environment, whether academic, professional, or social.</p>
+          <div class="about-features">
+            <div class="about-feat"><span class="feat-icon">✦</span> International Teaching Standards</div>
+            <div class="about-feat"><span class="feat-icon">✦</span> Native & Certified Expert Instructors</div>
+            <div class="about-feat"><span class="feat-icon">✦</span> Personalised Learning Pathways</div>
+            <div class="about-feat"><span class="feat-icon">✦</span> British Council Aligned Curriculum</div>
+          </div>
+        </div>
+        <div class="about-stats reveal">
+          <div class="stat-card"><div class="stat-num" data-target="10000">0</div><div class="stat-label">Students Enrolled</div></div>
+          <div class="stat-card"><div class="stat-num" data-target="500">0</div><div class="stat-label">Graduates Per Year</div></div>
+          <div class="stat-card"><div class="stat-num" data-target="98">0</div><div class="stat-label">% Satisfaction Rate</div></div>
+          <div class="stat-card"><div class="stat-num" data-target="15">0</div><div class="stat-label">Years of Excellence</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why" class="why-us section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Why BBC English Academy</span>
+        <h2 class="section-title">Built for <span class="accent">Your Success</span></h2>
+        <p class="section-subtitle">Every detail of our academy is designed to accelerate your progress and maximise your confidence.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon">🎓</div>
+          <h4>Expert Teachers</h4>
+          <p>Learn from certified native and bilingual instructors with years of classroom and international experience.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">💡</div>
+          <h4>Interactive Lessons</h4>
+          <p>Engage in dynamic, multimedia-rich lessons that make vocabulary, grammar, and pronunciation genuinely stick.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">🕐</div>
+          <h4>Flexible Schedule</h4>
+          <p>Morning, evening, weekend, and online classes available — structured around your life, not ours.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">🗣️</div>
+          <h4>Practical Speaking</h4>
+          <p>Dedicated conversation labs and real-world simulations so you speak with confidence from day one.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">🌍</div>
+          <h4>International Curriculum</h4>
+          <p>A Cambridge and British Council aligned syllabus trusted by learners across 40+ countries.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">🤝</div>
+          <h4>Student Support</h4>
+          <p>Dedicated academic advisors and a 24/7 digital support portal keep you on track at every step.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES SECTION -->
+  <section id="courses" class="courses section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Programmes</span>
+        <h2 class="section-title">Find Your <span class="accent">Perfect Course</span></h2>
+        <p class="section-subtitle">From beginner to advanced, we have a programme tailored to every goal and every learner.</p>
+      </div>
+      <div class="course-filters reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="general">General</button>
+        <button class="filter-btn" data-filter="exam">Exam Prep</button>
+        <button class="filter-btn" data-filter="specialist">Specialist</button>
+      </div>
+      <div class="courses-grid">
+        <div class="course-card reveal" data-category="general">
+          <div class="course-img"><div class="course-img-placeholder ci-1"></div><span class="course-level level-beginner">Beginner</span></div>
+          <div class="course-body">
+            <span class="course-duration">⏱ 3 Months</span>
+            <h4>Beginner English</h4>
+            <p>Build a solid foundation in reading, writing, speaking, and listening from the very start.</p>
+            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-category="general">
+          <div class="course-img"><div class="course-img-placeholder ci-2"></div><span class="course-level level-intermediate">Intermediate</span></div>
+          <div class="course-body">
+            <span class="course-duration">⏱ 4 Months</span>
+            <h4>Intermediate English</h4>
+            <p>Expand your vocabulary and tackle complex grammar structures with confidence.</p>
+            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-category="general">
+          <div class="course-img"><div class="course-img-placeholder ci-3"></div><span class="course-level level-advanced">Advanced</span></div>
+          <div class="course-body">
+            <span class="course-duration">⏱ 5 Months</span>
+            <h4>Advanced English</h4>
+            <p>Achieve near-native fluency with nuanced expression, debate, and academic writing skills.</p>
+            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-category="specialist">
+          <div class="course-img"><div class="course-img-placeholder ci-4"></div><span class="course-level level-business">Business</span></div>
+          <div class="course-body">
+            <span class="course-duration">⏱ 3 Months</span>
+            <h4>Business English</h4>
+            <p>Master professional communication, negotiations, presentations, and corporate writing.</p>
+            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-category="exam">
+          <div class="course-img"><div class="course-img-placeholder ci-5"></div><span class="course-level level-exam">IELTS</span></div>
+          <div class="course-body">
+            <span class="course-duration">⏱ 2 Months</span>
+            <h4>IELTS Preparation</h4>
+            <p>Targeted exam techniques, timed practice, and personalised feedback to hit your band score.</p>
+            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-category="exam">
+          <div class="course-img"><div class="course-img-placeholder ci-6"></div><span class="course-level level-exam">TOEFL</span></div>
+          <div class="course-body">
+            <span class="course-duration">⏱ 2 Months</span>
+            <h4>TOEFL Preparation</h4>
+            <p>Comprehensive TOEFL iBT coaching covering reading, listening, speaking, and writing tasks.</p>
+            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-category="specialist">
+          <div class="course-img"><div class="course-img-placeholder ci-7"></div><span class="course-level level-intermediate">Intermediate</span></div>
+          <div class="course-body">
+            <span class="course-duration">⏱ 2 Months</span>
+            <h4>Conversation Courses</h4>
+            <p>Weekly live debate circles, roleplay, and discussion topics that push your spoken English.</p>
+            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-category="general">
+          <div class="course-img"><div class="course-img-placeholder ci-8"></div><span class="course-level level-beginner">All Levels</span></div>
+          <div class="course-body">
+            <span class="course-duration">⏱ 2 Months</span>
+            <h4>Grammar Mastery</h4>
+            <p>A deep-dive into English grammar rules, exceptions, and real-world application.</p>
+            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-category="specialist">
+          <div class="course-img"><div class="course-img-placeholder ci-9"></div><span class="course-level level-advanced">Advanced</span></div>
+          <div class="course-body">
+            <span class="course-duration">⏱ 3 Months</span>
+            <h4>Speaking Fluency</h4>
+            <p>Intensive accent reduction, intonation coaching, and fluency training with native tutors.</p>
+            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+          </div>
+        </div>
+        <div class="course-card reveal" data-category="specialist">
+          <div class="course-img"><div class="course-img-placeholder ci-10"></div><span class="course-level level-beginner">Kids</span></div>
+          <div class="course-body">
+            <span class="course-duration">⏱ 4 Months</span>
+            <h4>Kids English Programme</h4>
+            <p>Fun, story-based learning for children aged 5–12 that builds language skills through play.</p>
+            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEACHERS SECTION -->
+  <section id="teachers" class="teachers section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Educators</span>
+        <h2 class="section-title">Meet Our <span class="accent">Expert Teachers</span></h2>
+        <p class="section-subtitle">Our instructors are more than teachers — they are mentors who invest in every student's personal journey.</p>
+      </div>
+      <div class="teachers-grid">
+        <div class="teacher-card reveal">
+          <div class="teacher-photo tp-1"></div>
+          <div class="teacher-info">
+            <h4>James Harrison</h4>
+            <span class="teacher-role">Senior English Instructor</span>
+            <p>12 years of experience · Oxford CELTA Certified · IELTS Expert</p>
+            <div class="teacher-tags"><span>IELTS</span><span>Grammar</span><span>Writing</span></div>
+          </div>
+        </div>
+        <div class="teacher-card reveal">
+          <div class="teacher-photo tp-2"></div>
+          <div class="teacher-info">
+            <h4>Sarah Mitchell</h4>
+            <span class="teacher-role">Conversation & Fluency Coach</span>
+            <p>9 years of experience · Cambridge DELTA · Speaking Specialist</p>
+            <div class="teacher-tags"><span>Speaking</span><span>Fluency</span><span>Accent</span></div>
+          </div>
+        </div>
+        <div class="teacher-card reveal">
+          <div class="teacher-photo tp-3"></div>
+          <div class="teacher-info">
+            <h4>Dr. Emily Clarke</h4>
+            <span class="teacher-role">Academic English Director</span>
+            <p>PhD Linguistics · 15 years · TOEFL & Business English Lead</p>
+            <div class="teacher-tags"><span>TOEFL</span><span>Business</span><span>Academic</span></div>
+          </div>
+        </div>
+        <div class="teacher-card reveal">
+          <div class="teacher-photo tp-4"></div>
+          <div class="teacher-info">
+            <h4>Michael Foster</h4>
+            <span class="teacher-role">Kids Programme Coordinator</span>
+            <p>8 years of experience · Child Education Specialist · TESOL</p>
+            <div class="teacher-tags"><span>Kids</span><span>Phonics</span><span>Creative</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="testimonials section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Success Stories</span>
+        <h2 class="section-title">What Our <span class="accent">Students Say</span></h2>
+        <p class="section-subtitle">Real stories from real students who transformed their English — and their lives.</p>
+      </div>
+      <div class="testimonial-wrapper reveal">
+        <div class="testimonial-track" id="testimonial-track">
+          <div class="testimonial-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"BBC English Academy completely changed my life. I went from barely speaking a sentence to giving a presentation in English at my company. The teachers are exceptional and the curriculum is world-class."</p>
+            <div class="testi-author">
+              <div class="testi-avatar ta-1"></div>
+              <div><strong>Amir Hassan</strong><span>IELTS Score 7.5 — Now studying in London</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"I enrolled in the TOEFL prep course and scored 112/120 on my first attempt. The strategies I learnt here were incredible — I felt completely prepared walking into the exam room."</p>
+            <div class="testi-author">
+              <div class="testi-avatar ta-2"></div>
+              <div><strong>Nour Saleh</strong><span>TOEFL 112 — Accepted at Stanford University</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"The Business English course opened doors I never thought possible. I secured a senior position at a multinational firm six months after completing the programme. Worth every penny."</p>
+            <div class="testi-author">
+              <div class="testi-avatar ta-3"></div>
+              <div><strong>Layla Mansour</strong><span>Business English Graduate — Senior Manager, KPMG</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"My daughter joined the Kids Programme at age 7. Two years later she reads chapter books in English and speaks to her teachers without hesitation. The results speak for themselves."</p>
+            <div class="testi-author">
+              <div class="testi-avatar ta-4"></div>
+              <div><strong>Khalid Al-Rashidi</strong><span>Parent — Kids Programme</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"I had tried other academies before but nothing compared to BBC English Academy. The speaking fluency course gave me real tools, real practice, and real confidence in just 3 months."</p>
+            <div class="testi-author">
+              <div class="testi-avatar ta-5"></div>
+              <div><strong>Sofia Petrakis</strong><span>Speaking Fluency — Now working at the UN</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-controls">
+          <button class="testi-btn" id="testi-prev" aria-label="Previous">&#8592;</button>
+          <div class="testi-dots" id="testi-dots"></div>
+          <button class="testi-btn" id="testi-next" aria-label="Next">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section id="pricing" class="pricing section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Investment in Yourself</span>
+        <h2 class="section-title">Simple, Transparent <span class="accent">Pricing</span></h2>
+        <p class="section-subtitle">Choose the plan that matches your goals. No hidden fees. Cancel anytime.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card reveal">
+          <div class="price-header">
+            <h4>Basic</h4>
+            <p>Start your English journey</p>
+          </div>
+          <div class="price-amount"><span class="currency">$</span>49<span class="period">/mo</span></div>
+          <ul class="price-features">
+            <li>✓ 4 Live Classes / Month</li>
+            <li>✓ Beginner Course Access</li>
+            <li>✓ Self-Study Materials</li>
+            <li>✓ Progress Tracking</li>
+            <li>✓ Community Forum Access</li>
+            <li class="disabled">✗ Exam Preparation</li>
+            <li class="disabled">✗ 1-on-1 Coaching</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Join Now</a>
+        </div>
+        <div class="price-card price-featured reveal">
+          <div class="price-badge">Most Popular</div>
+          <div class="price-header">
+            <h4>Professional</h4>
+            <p>For serious learners</p>
+          </div>
+          <div class="price-amount"><span class="currency">$</span>99<span class="period">/mo</span></div>
+          <ul class="price-features">
+            <li>✓ 12 Live Classes / Month</li>
+            <li>✓ All Course Levels</li>
+            <li>✓ IELTS & TOEFL Prep</li>
+            <li>✓ Speaking Lab Access</li>
+            <li>✓ Monthly Progress Report</li>
+            <li>✓ Certificate Upon Completion</li>
+            <li class="disabled">✗ 1-on-1 Coaching</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Join Now</a>
+        </div>
+        <div class="price-card reveal">
+          <div class="price-header">
+            <h4>Premium</h4>
+            <p>The ultimate experience</p>
+          </div>
+          <div class="price-amount"><span class="currency">$</span>179<span class="period">/mo</span></div>
+          <ul class="price-features">
+            <li>✓ Unlimited Live Classes</li>
+            <li>✓ All Courses + Specialist</li>
+            <li>✓ All Exam Preparations</li>
+            <li>✓ 4 × 1-on-1 Sessions / Month</li>
+            <li>✓ Personalised Learning Plan</li>
+            <li>✓ Priority Support 24/7</li>
+            <li>✓ Official Certificate + Alumni</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Join Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery" class="gallery section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Life at BBC English Academy</span>
+        <h2 class="section-title">Inside Our <span class="accent">Academy</span></h2>
+        <p class="section-subtitle">A glimpse into the spaces, moments, and milestones that define our community.</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item gi-1" data-index="0"><div class="gallery-overlay"><span>Modern Classrooms</span></div></div>
+        <div class="gallery-item gi-2" data-index="1"><div class="gallery-overlay"><span>Speaking Labs</span></div></div>
+        <div class="gallery-item gi-3" data-index="2"><div class="gallery-overlay"><span>Student Workshops</span></div></div>
+        <div class="gallery-item gi-4" data-index="3"><div class="gallery-overlay"><span>Graduation Ceremony</span></div></div>
+        <div class="gallery-item gi-5" data-index="4"><div class="gallery-overlay"><span>Group Activities</span></div></div>
+        <div class="gallery-item gi-6" data-index="5"><div class="gallery-overlay"><span>Library & Study Hub</span></div></div>
+      </div>
+    </div>
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lb-close" id="lb-close">✕</button>
+      <button class="lb-nav lb-prev" id="lb-prev">&#8592;</button>
+      <div class="lb-content" id="lb-content"></div>
+      <button class="lb-nav lb-next" id="lb-next">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" class="faq section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+        <p class="section-subtitle">Everything you need to know before taking the first step.</p>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question">How do I enrol at BBC English Academy? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Enrolment is simple. Contact us via the form below or call our admissions team. We will arrange a free level assessment, recommend the right course for you, and confirm your start date — all within 24 hours.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Which levels are available? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>We offer courses from complete beginner (A1) through to proficient (C2) across 10 different programme types. Every student completes a free placement test before enrolment to ensure the perfect fit.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you offer internationally recognised certificates? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Yes. Upon successful completion of any full programme, students receive an official BBC English Academy certificate. Our Professional and Premium students also receive certificates aligned with CEFR standards, recognised by universities and employers worldwide.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I learn online? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Absolutely. We offer fully online, in-person, and hybrid options for most of our programmes. Our virtual classrooms feature live video sessions, interactive exercises, and real-time feedback — exactly like being in the room.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What is the typical course duration? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Course lengths vary by programme. Most general English courses run 2–5 months. Exam preparation courses (IELTS, TOEFL) are typically 6–8 weeks. Intensive fast-track options are available for all levels.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is there a free trial or assessment? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Yes — every new student receives a complimentary placement assessment and a free demo class so you can experience our teaching style before committing to a programme.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What payment methods do you accept? <span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>We accept all major credit/debit cards, bank transfers, and select digital wallets. Monthly instalment plans are available for all programmes. Contact admissions for custom payment arrangements.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Start Your Journey <span class="accent">Today</span></h2>
+        <p class="section-subtitle">Fill in the form and our admissions team will reach out within 24 hours.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div><strong>Address</strong><span>12 Academy Square, London, UK — EC1A 1AA</span></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div><strong>Phone</strong><span>+44 (0) 20 7946 0000</span></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div><strong>Email</strong><span>admissions@bbcenglishacademy.com</span></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div><strong>Office Hours</strong><span>Mon–Fri: 8am–8pm · Sat: 9am–5pm</span></div>
+          </div>
+          <div class="contact-socials">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter/X">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name">Full Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email Address</label>
+              <input type="email" id="cf-email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-phone">Phone Number</label>
+              <input type="tel" id="cf-phone" name="phone" placeholder="+1 (555) 000-0000" />
+            </div>
+            <div class="form-group">
+              <label for="cf-course">Course of Interest</label>
+              <select id="cf-course" name="course">
+                <option value="">Select a course...</option>
+                <option>Beginner English</option>
+                <option>Intermediate English</option>
+                <option>Advanced English</option>
+                <option>Business English</option>
+                <option>IELTS Preparation</option>
+                <option>TOEFL Preparation</option>
+                <option>Conversation Courses</option>
+                <option>Grammar Mastery</option>
+                <option>Speaking Fluency</option>
+                <option>Kids English Programme</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" placeholder="Tell us about your learning goals..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Send Message</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <p class="form-note">🔒 Your information is safe. We never share your data with third parties.</p>
+          <div class="form-success" id="form-success">✅ Thank you! We'll be in touch within 24 hours.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-bbc">BBC</span>
+            <span class="logo-sub">English Academy</span>
+          </div>
+          <p>Empowering learners worldwide through world-class English education since 2010.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter/X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.54C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#teachers">Teachers</a></li>
+            <li><a href="#testimonials">Success Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Programmes</h5>
+          <ul>
+            <li><a href="#courses">Beginner English</a></li>
+            <li><a href="#courses">IELTS Preparation</a></li>
+            <li><a href="#courses">TOEFL Preparation</a></li>
+            <li><a href="#courses">Business English</a></li>
+            <li><a href="#courses">Kids Programme</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h5>Contact</h5>
+          <ul>
+            <li>12 Academy Square, London</li>
+            <li>+44 (0) 20 7946 0000</li>
+            <li>admissions@bbcenglishacademy.com</li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 BBC English Academy. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
