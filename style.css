@@ -1,0 +1,125 @@
+/* ============================================================
+   BBC English Academy — Additional Styles (Login Modal)
+   ============================================================ */
+
+/* Login Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open {
+  display: flex;
+}
+.login-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+.login-modal h2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.login-modal > p {
+  text-align: center;
+  color: var(--gray-dim);
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+.login-modal .modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--gray-dim);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+.login-modal .modal-close:hover {
+  color: var(--white);
+}
+.login-modal .form-group {
+  margin-bottom: 20px;
+}
+.login-modal .form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray);
+  margin-bottom: 8px;
+  display: block;
+}
+.login-modal .form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-size: 0.95rem;
+  outline: none;
+  transition: all var(--transition);
+}
+.login-modal .form-group input:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(214,0,0,0.1);
+}
+.login-modal .btn-full {
+  width: 100%;
+  justify-content: center;
+  margin-top: 8px;
+}
+.login-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: var(--gray-dim);
+}
+.login-note a {
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 600;
+}
+.login-note a:hover {
+  text-decoration: underline;
+}
+
+/* Nav Login Button */
+.nav-login-btn {
+  background: linear-gradient(135deg, var(--red), var(--red-bright));
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: all var(--transition);
+}
+.nav-login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(214,0,0,0.4);
+}
+.nav-login-btn::after {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .login-modal {
+    padding: 30px 24px;
+  }
+  .login-modal h2 {
+    font-size: 1.5rem;
+  }
+}

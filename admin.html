@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BBC English Academy — Admin Dashboard" />
+  <title>Admin Dashboard | BBC English Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-bbc">BBC</span>
+        <span class="logo-sub">English Academy</span>
+      </a>
+      <div class="nav-user">
+        <span>Administrator</span>
+        <button class="btn-logout" id="btn-logout">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="admin-container">
+    <aside class="admin-sidebar">
+      <nav class="admin-nav">
+        <a href="#overview" class="admin-link active" data-section="overview">
+          <span class="icon">📊</span>
+          <span>Overview</span>
+        </a>
+        <a href="#students" class="admin-link" data-section="students">
+          <span class="icon">👥</span>
+          <span>Students</span>
+        </a>
+        <a href="#courses" class="admin-link" data-section="courses">
+          <span class="icon">📚</span>
+          <span>Courses</span>
+        </a>
+        <a href="#applications" class="admin-link" data-section="applications">
+          <span class="icon">📝</span>
+          <span>Applications</span>
+        </a>
+        <a href="#analytics" class="admin-link" data-section="analytics">
+          <span class="icon">📈</span>
+          <span>Analytics</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <!-- OVERVIEW SECTION -->
+      <section id="overview" class="section active">
+        <div class="admin-header">
+          <h1>Dashboard Overview</h1>
+          <button class="btn-add" id="quick-add-student">+ Add Student</button>
+        </div>
+
+        <div class="stats-overview">
+          <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div class="stat-num" id="total-students">0</div>
+            <div class="stat-label">Total Students</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">✅</div>
+            <div class="stat-num" id="active-students">0</div>
+            <div class="stat-label">Active Students</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🎓</div>
+            <div class="stat-num" id="total-courses">0</div>
+            <div class="stat-label">Total Courses</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">📝</div>
+            <div class="stat-num" id="new-applications">0</div>
+            <div class="stat-label">New Applications</div>
+          </div>
+        </div>
+
+        <div class="enrollment-chart">
+          <h3>Course Enrollment Breakdown</h3>
+          <div class="chart-bars" id="enrollment-bars">
+            <div class="loading">Loading...</div>
+          </div>
+        </div>
+
+        <div class="data-table-container">
+          <div class="data-table-header">
+            <h2>Recent Applications</h2>
+          </div>
+          <table class="data-table" id="recent-apps-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="recent-apps-body">
+              <tr><td colspan="4" class="loading">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- STUDENTS SECTION -->
+      <section id="students" class="section">
+        <div class="admin-header">
+          <h1>Students Management</h1>
+          <button class="btn-add" id="btn-add-student">+ Add Student</button>
+        </div>
+
+        <div class="data-table-container">
+          <div class="data-table-header">
+            <h2>All Students</h2>
+            <div class="table-actions">
+              <input type="text" class="search-input" id="search-students" placeholder="Search students...">
+            </div>
+          </div>
+          <table class="data-table" id="students-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Courses</th>
+                <th>Status</th>
+                <th>Joined</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="students-body">
+              <tr><td colspan="7" class="loading">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- COURSES SECTION -->
+      <section id="courses" class="section">
+        <div class="admin-header">
+          <h1>Courses Management</h1>
+          <button class="btn-add" id="btn-add-course">+ Add Course</button>
+        </div>
+
+        <div class="data-table-container">
+          <div class="data-table-header">
+            <h2>All Courses</h2>
+            <div class="table-actions">
+              <input type="text" class="search-input" id="search-courses" placeholder="Search courses...">
+            </div>
+          </div>
+          <table class="data-table" id="courses-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Course Name</th>
+                <th>Level</th>
+                <th>Duration</th>
+                <th>Students</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="courses-body">
+              <tr><td colspan="7" class="loading">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- APPLICATIONS SECTION -->
+      <section id="applications" class="section">
+        <div class="admin-header">
+          <h1>Applications</h1>
+        </div>
+
+        <div class="data-table-container">
+          <div class="data-table-header">
+            <h2>All Applications</h2>
+            <div class="table-actions">
+              <input type="text" class="search-input" id="search-applications" placeholder="Search applications...">
+              <select class="search-input" id="filter-status">
+                <option value="">All Status</option>
+                <option value="New">New</option>
+                <option value="Contacted">Contacted</option>
+                <option value="Enrolled">Enrolled</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </div>
+          </div>
+          <table class="data-table" id="applications-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Course</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="applications-body">
+              <tr><td colspan="8" class="loading">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ANALYTICS SECTION -->
+      <section id="analytics" class="section">
+        <div class="admin-header">
+          <h1>Analytics</h1>
+        </div>
+
+        <div class="analytics-grid">
+          <div class="analytics-card">
+            <h3>Total Applications</h3>
+            <div class="big-number" id="analytics-total-apps">0</div>
+          </div>
+          <div class="analytics-card">
+            <h3>Conversion Rate</h3>
+            <div class="big-number" id="analytics-conversion">0%</div>
+          </div>
+          <div class="analytics-card">
+            <h3>Active Students</h3>
+            <div class="big-number" id="analytics-active">0</div>
+          </div>
+          <div class="analytics-card">
+            <h3>Graduates</h3>
+            <div class="big-number" id="analytics-graduates">0</div>
+          </div>
+        </div>
+
+        <div class="enrollment-chart">
+          <h3>Top Courses by Enrollment</h3>
+          <div class="chart-bars" id="top-courses-bars">
+            <div class="loading">Loading...</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" id="modal-content">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    var API_URL = 'YOUR_APPS_SCRIPT_WEB_APP_URL';
+  </script>
+  <script src="admin.js"></script>
+</body>
+</html>
