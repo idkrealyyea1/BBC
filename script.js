@@ -61,34 +61,31 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
   btn.disabled = true;
   btn.querySelector('span').textContent = 'Logging in...';
 
-  fetch(API_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ action: 'login', username: username, password: password })
-  })
-  .then(function(res) { return res.json(); })
-  .then(function(data) {
-    btn.disabled = false;
-    btn.querySelector('span').textContent = originalText;
+  var url = API_URL + '?action=login&username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password);
+  fetch(url)
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      btn.disabled = false;
+      btn.querySelector('span').textContent = originalText;
 
-    if (data.success) {
-      sessionStorage.setItem('bbcAuth', JSON.stringify(data));
-      loginModal.classList.remove('open');
-      
-      if (data.role === 'admin') {
-        window.location.href = 'admin.html';
+      if (data.success) {
+        sessionStorage.setItem('bbcAuth', JSON.stringify(data));
+        loginModal.classList.remove('open');
+        
+        if (data.role === 'admin') {
+          window.location.href = 'admin.html';
+        } else {
+          window.location.href = 'dashboard.html';
+        }
       } else {
-        window.location.href = 'dashboard.html';
+        alert(data.error || 'Login failed. Please try again.');
       }
-    } else {
-      alert(data.error || 'Login failed. Please try again.');
-    }
-  })
-  .catch(function(err) {
-    btn.disabled = false;
-    btn.querySelector('span').textContent = originalText;
-    alert('Connection error. Please try again.');
-  });
+    })
+    .catch(function(err) {
+      btn.disabled = false;
+      btn.querySelector('span').textContent = originalText;
+      alert('Connection error. Please try again.');
+    });
 });
 
 /* ==============================
@@ -249,7 +246,9 @@ function updateActiveLink() {
    ============================== */
 document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
   anchor.addEventListener('click', function (e) {
-    var target = document.querySelector(this.getAttribute('href'));
+    var href = this.getAttribute('href');
+    if (!href || href === '#') return;
+    var target = document.querySelector(href);
     if (target) {
       e.preventDefault();
       var offset = 72;
@@ -525,11 +524,10 @@ if (form) {
       message: message
     };
 
-    fetch(API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
-    })
+    var params = Object.keys(formData).map(function(k) {
+      return encodeURIComponent(k) + '=' + encodeURIComponent(formData[k]);
+    }).join('&');
+    fetch(API_URL + '?' + params)
     .then(function(res) { return res.json(); })
     .then(function(data) {
       btn.disabled = false;

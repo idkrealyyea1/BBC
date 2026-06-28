@@ -9,13 +9,15 @@ var currentTab = 'overview';
 
 // API Call Helper
 function apiCall(action, params) {
-  return fetch(API_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ action: action, ...params })
-  })
-  .then(res => res.json())
-  .catch(err => ({ success: false, error: err.message }));
+  var query = 'action=' + encodeURIComponent(action);
+  if (params) {
+    Object.keys(params).forEach(function(k) {
+      query += '&' + encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
+    });
+  }
+  return fetch(API_URL + '?' + query)
+  .then(function(res) { return res.json(); })
+  .catch(function(err) { return { success: false, error: err.message }; });
 }
 
 // Initialize
