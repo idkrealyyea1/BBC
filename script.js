@@ -7,7 +7,7 @@
 /* ==============================
    CONFIGURATION
    ============================== */
-var API_URL = 'YOUR_APPS_SCRIPT_WEB_APP_URL';
+var API_URL = 'https://script.google.com/macros/s/AKfycbyIRerxXXMGK74uodfKR9aFVles0Ipse0WlBHZaowg31W2YbfEylXMpBCH_K0HpSNBi/exec';
 
 /* ==============================
    LOADING SCREEN
