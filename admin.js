@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function setupEventListeners() {
   document.getElementById('btn-logout').addEventListener('click', logout);
+  document.getElementById('admin-hamburger').addEventListener('click', function() {
+    document.querySelector('.admin-sidebar').classList.toggle('open');
+  });
   document.getElementById('modal-close').addEventListener('click', closeModal);
   document.querySelector('.modal-backdrop').addEventListener('click', closeModal);
   document.getElementById('quick-add-student').addEventListener('click', () => openAddStudentModal());
@@ -35,6 +38,7 @@ function setupEventListeners() {
   document.querySelectorAll('.admin-link').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
+      document.querySelector('.admin-sidebar').classList.remove('open');
       var section = this.dataset.section;
       showSection(section);
     });
@@ -60,8 +64,10 @@ function setupEventListeners() {
 function debounce(func, wait) {
   var timeout;
   return function() {
+    var args = arguments;
+    var context = this;
     clearTimeout(timeout);
-    timeout = setTimeout(func, wait);
+    timeout = setTimeout(function() { func.apply(context, args); }, wait);
   };
 }
 
@@ -190,6 +196,20 @@ function searchStudents(query) {
       renderStudentsTable(result.data);
     }
   });
+}
+
+function searchCourses(query) {
+  if (!query) {
+    renderCoursesTable(allCourses);
+    return;
+  }
+  var lowerQuery = query.toLowerCase();
+  var filtered = allCourses.filter(function(c) {
+    return (c.courseName && c.courseName.toLowerCase().indexOf(lowerQuery) !== -1) ||
+           (c.courseId && c.courseId.toLowerCase().indexOf(lowerQuery) !== -1) ||
+           (c.level && c.level.toLowerCase().indexOf(lowerQuery) !== -1);
+  });
+  renderCoursesTable(filtered);
 }
 
 function openAddStudentModal() {
@@ -532,7 +552,7 @@ function openMaterialsModal(courseId, courseName) {
   var modalBody = document.getElementById('modal-body');
   modalBody.innerHTML = `
     <h2 style="margin-bottom: 24px;">Manage Materials: ${courseName}</h2>
-    <div id="materials-container">
+    <div id="materials-container" data-course-id="${courseId}">
       <button class="btn btn-primary" id="add-material-btn" style="margin-bottom: 20px;">+ Add Material</button>
       <div id="materials-list" class="loading">Loading...</div>
     </div>
@@ -552,22 +572,22 @@ function loadMaterials(courseId) {
       list.innerHTML = '';
       result.data.forEach(function(mat) {
         var item = document.createElement('div');
-        item.className = 'material-item';
+        item.style.background = 'var(--bg-3)';
+        item.style.padding = '16px';
+        item.style.borderRadius = 'var(--radius)';
         item.style.marginBottom = '12px';
         item.innerHTML = `
-          <div class="material-item" style="background: var(--bg-3); padding: 16px; border-radius: var(--radius);">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div>
-                <strong>${mat.title}</strong>
-                <span style="color: var(--gray-dim); margin-left: 12px;">(${mat.type})</span>
-              </div>
-              <div>
-                <button class="btn-action" onclick="editMaterial('${courseId}', '${mat.materialId}')">Edit</button>
-                <button class="btn-action delete" onclick="deleteMaterial('${mat.materialId}')">Delete</button>
-              </div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <strong>${mat.title}</strong>
+              <span style="color: var(--gray-dim); margin-left: 12px;">(${mat.type})</span>
             </div>
-            <a href="${mat.url}" target="_blank" style="color: var(--red); font-size: 0.85rem; display: block; margin-top: 8px;">${mat.url}</a>
+            <div>
+              <button class="btn-action" onclick="editMaterial('${courseId}', '${mat.materialId}')">Edit</button>
+              <button class="btn-action delete" onclick="deleteMaterial('${mat.materialId}')">Delete</button>
+            </div>
           </div>
+          <a href="${mat.url}" target="_blank" rel="noopener" style="color: var(--red); font-size: 0.85rem; display: block; margin-top: 8px;">${mat.url}</a>
         `;
         list.appendChild(item);
       });
@@ -630,11 +650,64 @@ function deleteMaterial(materialId) {
   apiCall('deleteMaterial', { materialId: materialId }).then(function(result) {
     if (result.success) {
       showToast('Material deleted successfully', 'success');
-      var modal = document.getElementById('modal');
-      var courseId = modal.querySelector('.material-item').getAttribute('data-course-id') || '';
+      var container = document.getElementById('materials-container');
+      var courseId = container.getAttribute('data-course-id') || '';
       if (courseId) loadMaterials(courseId);
     } else {
       showToast(result.error || 'Failed to delete material', 'error');
+    }
+  });
+}
+
+function editMaterial(courseId, materialId) {
+  apiCall('getMaterials', { courseId: courseId }).then(function(result) {
+    if (!result.success) return;
+    var material = result.data.find(function(m) { return m.materialId === materialId; });
+    if (!material) return;
+    
+    var list = document.getElementById('materials-list');
+    var form = document.createElement('div');
+    form.className = 'material-item';
+    form.style.margin = '0 0 12px 0';
+    form.style.background = 'var(--bg-3)';
+    form.style.padding = '16px';
+    form.style.borderRadius = 'var(--radius)';
+    form.innerHTML = `
+      <h4 style="margin-bottom: 12px;">Edit Material</h4>
+      <div class="form-row" style="margin-bottom: 12px;">
+        <input type="text" id="edit-mat-title" value="${material.title.replace(/"/g, '&quot;')}" style="flex: 1; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-card); color: var(--white);" />
+        <select id="edit-mat-type" style="padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-card); color: var(--white);">
+          <option value="video" ${material.type === 'video' ? 'selected' : ''}>Video</option>
+          <option value="pdf" ${material.type === 'pdf' ? 'selected' : ''}>PDF</option>
+          <option value="link" ${material.type === 'link' ? 'selected' : ''}>Link</option>
+        </select>
+      </div>
+      <input type="text" id="edit-mat-url" value="${material.url.replace(/"/g, '&quot;')}" style="width: 100%; padding: 10px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-card); color: var(--white); margin-bottom: 12px;" />
+      <div>
+        <button class="btn btn-primary" onclick="saveEditMaterial('${courseId}', '${materialId}')">Save</button>
+        <button class="btn-action" onclick="loadMaterials('${courseId}')">Cancel</button>
+      </div>
+    `;
+    list.insertBefore(form, list.firstChild);
+  });
+}
+
+function saveEditMaterial(courseId, materialId) {
+  var title = document.getElementById('edit-mat-title').value;
+  var type = document.getElementById('edit-mat-type').value;
+  var url = document.getElementById('edit-mat-url').value;
+
+  if (!title || !url) {
+    showToast('Please fill in all fields', 'error');
+    return;
+  }
+
+  apiCall('updateMaterial', { materialId: materialId, courseId: courseId, title: title, type: type, url: url }).then(function(result) {
+    if (result.success) {
+      showToast('Material updated successfully', 'success');
+      loadMaterials(courseId);
+    } else {
+      showToast(result.error || 'Failed to update material', 'error');
     }
   });
 }

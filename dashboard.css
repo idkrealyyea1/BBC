@@ -319,6 +319,21 @@ body {
   transition: width 0.5s ease;
 }
 
+/* Progress Update */
+.progress-update {
+  margin-bottom: 40px;
+}
+.progress-update h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.progress-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 /* Materials List */
 .materials-list {
   display: flex;

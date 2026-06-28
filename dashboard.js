@@ -25,7 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function setupEventListeners() {
   document.getElementById('btn-logout').addEventListener('click', logout);
-  document.getElementById('btn-back-courses').addEventListener('click', showSection);
+  document.getElementById('btn-back-courses').addEventListener('click', function() {
+    showSection('courses');
+  });
   document.getElementById('profile-form').addEventListener('submit', handleProfileUpdate);
   document.getElementById('modal-close').addEventListener('click', closeModal);
   document.querySelector('.modal-backdrop').addEventListener('click', closeModal);
@@ -195,7 +197,7 @@ async function showCourseDetail(course) {
             <span>${mat.type}</span>
           </div>
         </div>
-        <a href="${mat.url}" target="_blank" class="material-link">
+        <a href="${mat.url}" target="_blank" rel="noopener" class="material-link">
           View Material →
         </a>
       `;
@@ -250,6 +252,32 @@ function handleProfileUpdate(e) {
       document.getElementById('profile-avatar').textContent = name.charAt(0).toUpperCase();
     } else {
       showToast(result.error || 'Failed to update profile', 'error');
+    }
+  });
+}
+
+function updateProgress(percentage) {
+  if (!currentCourse) return;
+  apiCall('updateProgress', {
+    studentId: currentUser.studentId,
+    courseId: currentCourse.courseId,
+    percentage: percentage
+  }).then(function(result) {
+    if (result.success) {
+      currentUser.progress = currentUser.progress || '';
+      var progressMap = {};
+      currentUser.progress.split(',').forEach(function(pair) {
+        var parts = pair.split(':');
+        if (parts.length === 2) progressMap[parts[0].trim()] = parts[1].trim();
+      });
+      progressMap[currentCourse.courseId] = percentage + '%';
+      currentUser.progress = Object.keys(progressMap).map(function(k) { return k + ':' + progressMap[k]; }).join(',');
+      sessionStorage.setItem('bbcAuth', JSON.stringify(currentUser));
+      showToast('Progress updated to ' + percentage + '%', 'success');
+      renderCourses();
+      showCourseDetail(currentCourse);
+    } else {
+      showToast(result.error || 'Failed to update progress', 'error');
     }
   });
 }
