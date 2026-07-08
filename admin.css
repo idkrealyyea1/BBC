@@ -475,7 +475,7 @@ html[dir="rtl"] .admin-sidebar {
   border-right: none;
   border-left: 1px solid var(--border);
 }
-html[dir="rtl"] .admin-content {
+html[dir="rtl"] .admin-main {
   margin-left: 0;
   margin-right: 260px;
 }
@@ -491,7 +491,7 @@ html[dir="rtl"] .admin-link {
     right: 0;
     left: auto;
   }
-  html[dir="rtl"] .admin-content {
+  html[dir="rtl"] .admin-main {
     margin-right: 0;
   }
 }
