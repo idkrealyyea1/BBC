@@ -38,6 +38,31 @@
   background: rgba(214,0,0,0.08);
   color: var(--white);
 }
+
+/* RTL */
+html[dir="rtl"] .admin-sidebar {
+  left: auto; right: 0;
+  border-right: none;
+  border-left: 1px solid var(--border);
+}
+html[dir="rtl"] .admin-content {
+  margin-left: 0;
+  margin-right: 260px;
+}
+html[dir="rtl"] .admin-link {
+  flex-direction: row-reverse;
+}
+@media (max-width: 768px) {
+  html[dir="rtl"] .admin-sidebar {
+    left: auto; right: -280px;
+  }
+  html[dir="rtl"] .admin-sidebar.open {
+    right: 0; left: auto;
+  }
+  html[dir="rtl"] .admin-content {
+    margin-right: 0;
+  }
+}
 .admin-link.active {
   background: rgba(214,0,0,0.12);
   color: var(--red);
@@ -417,5 +442,56 @@
   .data-table th,
   .data-table td {
     padding: 10px 12px;
+  }
+}
+
+/* Theme & Language Toggle */
+.nav-icon-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--gray);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+  letter-spacing: 0.5px;
+}
+.nav-icon-btn:hover {
+  color: var(--white);
+  border-color: var(--red);
+}
+.nav-icon-btn.active {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red);
+}
+
+/* RTL Support */
+html[dir="rtl"] .admin-sidebar {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 1px solid var(--border);
+}
+html[dir="rtl"] .admin-content {
+  margin-left: 0;
+  margin-right: 260px;
+}
+html[dir="rtl"] .admin-link {
+  flex-direction: row-reverse;
+}
+@media (max-width: 768px) {
+  html[dir="rtl"] .admin-sidebar {
+    left: auto;
+    right: -280px;
+  }
+  html[dir="rtl"] .admin-sidebar.open {
+    right: 0;
+    left: auto;
+  }
+  html[dir="rtl"] .admin-content {
+    margin-right: 0;
   }
 }

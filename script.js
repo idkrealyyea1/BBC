@@ -582,4 +582,6 @@ window.addEventListener('scroll', function () {
 document.addEventListener('DOMContentLoaded', function () {
   updateActiveLink();
   toggleBackToTop();
+  applyLanguage();
+  applyTheme();
 });

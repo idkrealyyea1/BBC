@@ -180,8 +180,8 @@ function renderStudentsTable(students) {
       <td><span class="status-badge ${student.status.toLowerCase()}">${student.status}</span></td>
       <td>${student.joinDate ? new Date(student.joinDate).toLocaleDateString() : '-'}</td>
       <td class="actions">
-        <button class="btn-action" onclick="editStudent('${student.studentId}')">Edit</button>
-        <button class="btn-action delete" onclick="deleteStudent('${student.studentId}')">Delete</button>
+        <button class="btn-action" data-i18n="admin-edit" onclick="editStudent('${student.studentId}')">Edit</button>
+        <button class="btn-action delete" data-i18n="admin-delete" onclick="deleteStudent('${student.studentId}')">Delete</button>
       </td>
     `;
     tbody.appendChild(row);
@@ -395,9 +395,9 @@ function renderCoursesTable(courses) {
       <td>${enrollmentCount}</td>
       <td><span class="status-badge ${course.status.toLowerCase()}">${course.status}</span></td>
       <td class="actions">
-        <button class="btn-action" onclick="editCourse('${course.courseId}')">Edit</button>
-        <button class="btn-action" onclick="openMaterialsModal('${course.courseId}', '${course.courseName}')">Materials</button>
-        <button class="btn-action delete" onclick="deleteCourse('${course.courseId}')">Delete</button>
+        <button class="btn-action" data-i18n="admin-edit" onclick="editCourse('${course.courseId}')">Edit</button>
+        <button class="btn-action" data-i18n="admin-materials" onclick="openMaterialsModal('${course.courseId}', '${course.courseName}')">Materials</button>
+        <button class="btn-action delete" data-i18n="admin-delete" onclick="deleteCourse('${course.courseId}')">Delete</button>
       </td>
     `;
     tbody.appendChild(row);
@@ -829,3 +829,5 @@ function showToast(message, type) {
     toast.classList.remove('show');
   }, 3000);
 }
+applyLanguage();
+applyTheme();

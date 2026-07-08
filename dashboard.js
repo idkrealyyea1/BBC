@@ -199,7 +199,7 @@ async function showCourseDetail(course) {
             <span>${mat.type}</span>
           </div>
         </div>
-        <a href="${mat.url}" target="_blank" rel="noopener" class="material-link">
+        <a href="${mat.url}" target="_blank" rel="noopener" class="material-link" data-i18n="dash-view">
           View Material →
         </a>
       `;
@@ -296,3 +296,6 @@ function showToast(message, type) {
 function closeModal() {
   document.getElementById('modal').classList.remove('open');
 }
+
+applyLanguage();
+applyTheme();

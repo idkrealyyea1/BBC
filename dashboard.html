@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="dashboard.css" />
+  <script src="translations.js"></script>
 </head>
 <body>
 
@@ -20,7 +21,13 @@
       </a>
       <div class="nav-user">
         <span id="user-name">Loading...</span>
-        <button class="btn-logout" id="btn-logout">Logout</button>
+        <button class="btn-logout" id="btn-logout" data-i18n="nav-logout">Logout</button>
+        <ul style="display:flex;list-style:none;gap:8px;align-items:center;margin:0;padding:0">
+          <li><button class="nav-icon-btn lang-btn active" data-lang="en" onclick="setLang('en')" title="English">EN</button></li>
+          <li><button class="nav-icon-btn lang-btn" data-lang="ar" onclick="setLang('ar')" title="العربية">AR</button></li>
+          <li><button class="nav-icon-btn theme-btn active" data-theme="dark" onclick="setTheme('dark')" title="Dark">🌙</button></li>
+          <li><button class="nav-icon-btn theme-btn" data-theme="light" onclick="setTheme('light')" title="Light">☀️</button></li>
+        </ul>
       </div>
     </div>
   </nav>
@@ -30,19 +37,19 @@
       <nav class="sidebar-nav">
         <a href="#overview" class="sidebar-link active" data-section="overview">
           <span class="icon">📊</span>
-          <span>Overview</span>
+          <span data-i18n="dash-overview">Overview</span>
         </a>
         <a href="#courses" class="sidebar-link" data-section="courses">
           <span class="icon">📚</span>
-          <span>My Courses</span>
+          <span data-i18n="dash-courses">My Courses</span>
         </a>
         <a href="#profile" class="sidebar-link" data-section="profile">
           <span class="icon">👤</span>
-          <span>My Profile</span>
+          <span data-i18n="dash-profile">My Profile</span>
         </a>
         <a href="#announcements" class="sidebar-link" data-section="announcements">
           <span class="icon">📢</span>
-          <span>Announcements</span>
+          <span data-i18n="dash-announce">Announcements</span>
         </a>
       </nav>
     </aside>
@@ -50,7 +57,7 @@
     <main class="main-content">
       <section id="overview" class="section active">
         <div class="section-header">
-          <h1>Welcome back, <span id="dashboard-name">Student</span>!</h1>
+          <h1 data-i18n="dash-welcome">Welcome back, <span id="dashboard-name">Student</span>!</h1>
           <p>Here's your learning overview</p>
         </div>
 
@@ -59,21 +66,21 @@
             <div class="stat-icon">📚</div>
             <div class="stat-info">
               <span class="stat-num" id="stat-enrolled">0</span>
-              <span class="stat-label">Enrolled Courses</span>
+              <span class="stat-label" data-i18n="dash-enrolled">Enrolled Courses</span>
             </div>
           </div>
           <div class="stat-card">
             <div class="stat-icon">✅</div>
             <div class="stat-info">
               <span class="stat-num" id="stat-completed">0</span>
-              <span class="stat-label">Completed</span>
+              <span class="stat-label" data-i18n="dash-completed">Completed</span>
             </div>
           </div>
           <div class="stat-card">
             <div class="stat-icon">📈</div>
             <div class="stat-info">
               <span class="stat-num" id="stat-progress">0%</span>
-              <span class="stat-label">Overall Progress</span>
+              <span class="stat-label" data-i18n="dash-progress">Overall Progress</span>
             </div>
           </div>
           <div class="stat-card">
@@ -86,25 +93,25 @@
         </div>
 
         <div class="recent-courses">
-          <h2>Continue Learning</h2>
+          <h2 data-i18n="dash-continue">Continue Learning</h2>
           <div class="course-list" id="recent-course-list">
-            <div class="loading">Loading your courses...</div>
+            <div class="loading" data-i18n="dash-loading">Loading your courses...</div>
           </div>
         </div>
       </section>
 
       <section id="courses" class="section">
         <div class="section-header">
-          <h1>My Courses</h1>
+          <h1 data-i18n="dash-courses">My Courses</h1>
           <p>Access your enrolled courses and materials</p>
         </div>
         <div class="courses-grid" id="courses-grid">
-          <div class="loading">Loading courses...</div>
+          <div class="loading" data-i18n="dash-loading">Loading courses...</div>
         </div>
       </section>
 
       <section id="course-detail" class="section">
-        <button class="btn-back" id="btn-back-courses">← Back to Courses</button>
+        <button class="btn-back" id="btn-back-courses" data-i18n="Back to Courses">← Back to Courses</button>
         <div class="course-detail-container">
           <div class="course-detail-header">
             <h1 id="detail-title">Course Title</h1>
@@ -133,9 +140,9 @@
             </div>
           </div>
           <div class="materials-section">
-            <h2>Course Materials</h2>
+            <h2 data-i18n="dash-materials">Course Materials</h2>
             <div class="materials-list" id="materials-list">
-              <div class="loading">Loading materials...</div>
+              <div class="loading" data-i18n="dash-loading">Loading materials...</div>
             </div>
           </div>
         </div>
@@ -143,7 +150,7 @@
 
       <section id="profile" class="section">
         <div class="section-header">
-          <h1>My Profile</h1>
+          <h1 data-i18n="dash-profile">My Profile</h1>
           <p>Update your information</p>
         </div>
         <div class="profile-container">
@@ -153,7 +160,7 @@
           <form class="profile-form" id="profile-form">
             <div class="form-row">
               <div class="form-group">
-                <label>Full Name</label>
+                <label data-i18n="contact-name">Full Name</label>
                 <input type="text" id="profile-name" required />
               </div>
               <div class="form-group">
@@ -163,30 +170,30 @@
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label>Email</label>
+                <label data-i18n="contact-email">Email</label>
                 <input type="email" id="profile-email" required />
               </div>
               <div class="form-group">
-                <label>Phone</label>
+                <label data-i18n="contact-phone">Phone</label>
                 <input type="tel" id="profile-phone" />
               </div>
             </div>
             <div class="form-group">
-              <label>New Password (leave blank to keep current)</label>
+              <label data-i18n="dash-new-pass">New Password (leave blank to keep current)</label>
               <input type="password" id="profile-password" placeholder="Enter new password" />
             </div>
             <div class="form-group">
-              <label>Confirm New Password</label>
+              <label data-i18n="dash-confirm-pass">Confirm New Password</label>
               <input type="password" id="profile-password-confirm" placeholder="Confirm new password" />
             </div>
-            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <button type="submit" class="btn btn-primary" data-i18n="dash-save">Save Changes</button>
           </form>
         </div>
       </section>
 
       <section id="announcements" class="section">
         <div class="section-header">
-          <h1>Announcements</h1>
+          <h1 data-i18n="dash-announce">Announcements</h1>
           <p>Latest updates from BBC English Academy</p>
         </div>
         <div class="announcements-list" id="announcements-list">

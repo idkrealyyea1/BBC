@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="dashboard.css" />
   <link rel="stylesheet" href="admin.css" />
+  <script src="translations.js"></script>
 </head>
 <body>
 
@@ -23,6 +24,10 @@
         <span>Administrator</span>
         <button class="admin-hamburger" id="admin-hamburger">☰ Menu</button>
         <button class="btn-logout" id="btn-logout">Logout</button>
+        <button class="nav-icon-btn lang-btn active" data-lang="en" onclick="setLang('en')" title="English">EN</button>
+        <button class="nav-icon-btn lang-btn" data-lang="ar" onclick="setLang('ar')" title="العربية">AR</button>
+        <button class="nav-icon-btn theme-btn active" data-theme="dark" onclick="setTheme('dark')" title="Dark">🌙</button>
+        <button class="nav-icon-btn theme-btn" data-theme="light" onclick="setTheme('light')" title="Light">☀️</button>
       </div>
     </div>
   </nav>
@@ -32,23 +37,23 @@
       <nav class="admin-nav">
         <a href="#overview" class="admin-link active" data-section="overview">
           <span class="icon">📊</span>
-          <span>Overview</span>
+          <span data-i18n="admin-overview">Overview</span>
         </a>
         <a href="#students" class="admin-link" data-section="students">
           <span class="icon">👥</span>
-          <span>Students</span>
+          <span data-i18n="admin-students">Students</span>
         </a>
         <a href="#courses" class="admin-link" data-section="courses">
           <span class="icon">📚</span>
-          <span>Courses</span>
+          <span data-i18n="admin-courses">Courses</span>
         </a>
         <a href="#applications" class="admin-link" data-section="applications">
           <span class="icon">📝</span>
-          <span>Applications</span>
+          <span data-i18n="admin-apps">Applications</span>
         </a>
         <a href="#analytics" class="admin-link" data-section="analytics">
           <span class="icon">📈</span>
-          <span>Analytics</span>
+          <span data-i18n="admin-analytics">Analytics</span>
         </a>
       </nav>
     </aside>
@@ -65,29 +70,29 @@
           <div class="stat-card">
             <div class="stat-icon">👥</div>
             <div class="stat-num" id="total-students">0</div>
-            <div class="stat-label">Total Students</div>
+            <div class="stat-label" data-i18n="admin-total-students">Total Students</div>
           </div>
           <div class="stat-card">
             <div class="stat-icon">✅</div>
             <div class="stat-num" id="active-students">0</div>
-            <div class="stat-label">Active Students</div>
+            <div class="stat-label" data-i18n="admin-active">Active Students</div>
           </div>
           <div class="stat-card">
             <div class="stat-icon">🎓</div>
             <div class="stat-num" id="total-courses">0</div>
-            <div class="stat-label">Total Courses</div>
+            <div class="stat-label" data-i18n="admin-total-courses">Total Courses</div>
           </div>
           <div class="stat-card">
             <div class="stat-icon">📝</div>
             <div class="stat-num" id="new-applications">0</div>
-            <div class="stat-label">New Applications</div>
+            <div class="stat-label" data-i18n="admin-new-apps">New Applications</div>
           </div>
         </div>
 
         <div class="enrollment-chart">
           <h3>Course Enrollment Breakdown</h3>
           <div class="chart-bars" id="enrollment-bars">
-            <div class="loading">Loading...</div>
+            <div class="loading" data-i18n="dash-loading">Loading...</div>
           </div>
         </div>
 
@@ -105,7 +110,7 @@
               </tr>
             </thead>
             <tbody id="recent-apps-body">
-              <tr><td colspan="4" class="loading">Loading...</td></tr>
+              <tr><td colspan="4" class="loading" data-i18n="dash-loading">Loading...</td></tr>
             </tbody>
           </table>
         </div>
@@ -114,15 +119,15 @@
       <!-- STUDENTS SECTION -->
       <section id="students" class="section">
         <div class="admin-header">
-          <h1>Students Management</h1>
-          <button class="btn-add" id="btn-add-student">+ Add Student</button>
+          <h1 data-i18n="admin-students">Students Management</h1>
+          <button class="btn-add" id="btn-add-student" data-i18n="admin-add-student">+ Add Student</button>
         </div>
 
         <div class="data-table-container">
           <div class="data-table-header">
             <h2>All Students</h2>
             <div class="table-actions">
-              <input type="text" class="search-input" id="search-students" placeholder="Search students...">
+              <input type="text" class="search-input" id="search-students" placeholder="Search students..." data-i18n="admin-search">
             </div>
           </div>
           <table class="data-table" id="students-table">
@@ -138,7 +143,7 @@
               </tr>
             </thead>
             <tbody id="students-body">
-              <tr><td colspan="7" class="loading">Loading...</td></tr>
+              <tr><td colspan="7" class="loading" data-i18n="dash-loading">Loading...</td></tr>
             </tbody>
           </table>
         </div>
@@ -147,15 +152,15 @@
       <!-- COURSES SECTION -->
       <section id="courses" class="section">
         <div class="admin-header">
-          <h1>Courses Management</h1>
-          <button class="btn-add" id="btn-add-course">+ Add Course</button>
+          <h1 data-i18n="admin-courses">Courses Management</h1>
+          <button class="btn-add" id="btn-add-course" data-i18n="admin-add-course">+ Add Course</button>
         </div>
 
         <div class="data-table-container">
           <div class="data-table-header">
             <h2>All Courses</h2>
             <div class="table-actions">
-              <input type="text" class="search-input" id="search-courses" placeholder="Search courses...">
+              <input type="text" class="search-input" id="search-courses" placeholder="Search courses..." data-i18n="admin-search">
             </div>
           </div>
           <table class="data-table" id="courses-table">
@@ -171,7 +176,7 @@
               </tr>
             </thead>
             <tbody id="courses-body">
-              <tr><td colspan="7" class="loading">Loading...</td></tr>
+              <tr><td colspan="7" class="loading" data-i18n="dash-loading">Loading...</td></tr>
             </tbody>
           </table>
         </div>
@@ -180,14 +185,14 @@
       <!-- APPLICATIONS SECTION -->
       <section id="applications" class="section">
         <div class="admin-header">
-          <h1>Applications</h1>
+          <h1 data-i18n="admin-apps">Applications</h1>
         </div>
 
         <div class="data-table-container">
           <div class="data-table-header">
             <h2>All Applications</h2>
             <div class="table-actions">
-              <input type="text" class="search-input" id="search-applications" placeholder="Search applications...">
+              <input type="text" class="search-input" id="search-applications" placeholder="Search applications..." data-i18n="admin-search">
               <select class="search-input" id="filter-status">
                 <option value="">All Status</option>
                 <option value="New">New</option>
@@ -211,7 +216,7 @@
               </tr>
             </thead>
             <tbody id="applications-body">
-              <tr><td colspan="8" class="loading">Loading...</td></tr>
+              <tr><td colspan="8" class="loading" data-i18n="dash-loading">Loading...</td></tr>
             </tbody>
           </table>
         </div>
@@ -245,7 +250,7 @@
         <div class="enrollment-chart">
           <h3>Top Courses by Enrollment</h3>
           <div class="chart-bars" id="top-courses-bars">
-            <div class="loading">Loading...</div>
+            <div class="loading" data-i18n="dash-loading">Loading...</div>
           </div>
         </div>
       </section>

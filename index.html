@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <script src="translations.js"></script>
 </head>
 <body>
 
@@ -34,15 +35,23 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#courses" class="nav-link">Courses</a></li>
-        <li><a href="#teachers" class="nav-link">Teachers</a></li>
-        <li><a href="#testimonials" class="nav-link">Success Stories</a></li>
-        <li><a href="#pricing" class="nav-link">Pricing</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li><a href="#" class="nav-link nav-login-btn" id="nav-login-btn">Student Login</a></li>
+        <li><a href="#home" class="nav-link" data-i18n="nav-home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav-about">About</a></li>
+        <li><a href="#courses" class="nav-link" data-i18n="nav-courses">Courses</a></li>
+        <li><a href="#teachers" class="nav-link" data-i18n="nav-teachers">Teachers</a></li>
+        <li><a href="#testimonials" class="nav-link" data-i18n="nav-stories">Success Stories</a></li>
+        <li><a href="#pricing" class="nav-link" data-i18n="nav-pricing">Pricing</a></li>
+        <li><a href="#faq" class="nav-link" data-i18n="nav-faq">FAQ</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav-contact">Contact</a></li>
+        <li><a href="#" class="nav-link nav-login-btn" id="nav-login-btn" data-i18n="nav-login">Student Login</a></li>
+        <li class="nav-lang-item">
+          <button class="nav-icon-btn lang-btn active" data-lang="en" onclick="setLang('en')" title="English">EN</button>
+          <button class="nav-icon-btn lang-btn" data-lang="ar" onclick="setLang('ar')" title="العربية">AR</button>
+        </li>
+        <li class="nav-theme-item">
+          <button class="nav-icon-btn theme-btn active" data-theme="dark" onclick="setTheme('dark')" title="Dark">🌙</button>
+          <button class="nav-icon-btn theme-btn" data-theme="light" onclick="setTheme('light')" title="Light">☀️</button>
+        </li>
       </ul>
     </div>
   </nav>
@@ -51,22 +60,22 @@
   <div class="modal-overlay" id="login-modal">
     <div class="modal-content login-modal">
       <button class="modal-close" id="login-close">✕</button>
-      <h2>Student Portal</h2>
-      <p>Enter your credentials to access your dashboard</p>
+      <h2 data-i18n="login-title">Student Portal</h2>
+      <p data-i18n="login-sub">Enter your credentials to access your dashboard</p>
       <form id="login-form">
         <div class="form-group">
-          <label for="login-username">Username</label>
+          <label for="login-username" data-i18n="login-user">Username</label>
           <input type="text" id="login-username" name="username" placeholder="Enter your username" required />
         </div>
         <div class="form-group">
-          <label for="login-password">Password</label>
+          <label for="login-password" data-i18n="login-pass">Password</label>
           <input type="password" id="login-password" name="password" placeholder="Enter your password" required />
         </div>
         <button type="submit" class="btn btn-primary btn-full">
-          <span>Login</span>
+          <span data-i18n="login-btn">Login</span>
         </button>
       </form>
-      <p class="login-note">Don't have an account? <a href="#contact">Apply now</a></p>
+      <p class="login-note" data-i18n="login-note">Don't have an account? <a href="#contact">Apply now</a></p>
     </div>
   </div>
 
@@ -86,20 +95,20 @@
     </div>
     <div class="hero-content">
       <div class="hero-badge reveal-fade">Premium English Education</div>
-      <h1 class="hero-title reveal-fade">
+      <h1 class="hero-title reveal-fade" data-i18n="hero-title">
         Master English<br />
         <span class="hero-accent">With Confidence</span>
       </h1>
-      <p class="hero-subtitle reveal-fade">
+      <p class="hero-subtitle reveal-fade" data-i18n="hero-sub">
         Join BBC English Academy and learn English through modern teaching methods,<br class="hide-mobile" />
         expert instructors, and interactive learning experiences designed for all levels.
       </p>
       <div class="hero-buttons reveal-fade">
-        <a href="#courses" class="btn btn-primary">
+        <a href="#courses" class="btn btn-primary" data-i18n="hero-cta">
           <span>Start Learning</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-        <a href="#courses" class="btn btn-outline">Explore Courses</a>
+        <a href="#courses" class="btn btn-outline" data-i18n="hero-tour">Explore Courses</a>
       </div>
       <div class="hero-stats reveal-fade">
         <div class="hero-stat"><strong>10K+</strong><span>Students</span></div>
@@ -120,15 +129,15 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Who We Are</span>
-        <h2 class="section-title">Excellence in <span class="accent">English Education</span></h2>
+        <h2 class="section-title" data-i18n="about-title">Excellence in <span class="accent">English Education</span></h2>
         <p class="section-subtitle">A world-class institution built on decades of teaching experience and a commitment to transforming students into confident English speakers.</p>
       </div>
       <div class="about-grid">
         <div class="about-content reveal">
           <h3>Our Mission</h3>
-          <p>At BBC English Academy, we believe every student deserves access to world-class English education. Our mission is to bridge language barriers and unlock global opportunities for learners at every stage of their journey.</p>
+          <p data-i18n="about-p1">At BBC English Academy, we believe every student deserves access to world-class English education. Our mission is to bridge language barriers and unlock global opportunities for learners at every stage of their journey.</p>
           <h3>Our Vision</h3>
-          <p>We envision a world where language is never a barrier — where every student walks out of our doors ready to thrive in any international environment, whether academic, professional, or social.</p>
+          <p data-i18n="about-p2">We envision a world where language is never a barrier — where every student walks out of our doors ready to thrive in any international environment, whether academic, professional, or social.</p>
           <div class="about-features">
             <div class="about-feat"><span class="feat-icon">✦</span> International Teaching Standards</div>
             <div class="about-feat"><span class="feat-icon">✦</span> Native & Certified Expert Instructors</div>
@@ -194,8 +203,8 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Our Programmes</span>
-        <h2 class="section-title">Find Your <span class="accent">Perfect Course</span></h2>
-        <p class="section-subtitle">From beginner to advanced, we have a programme tailored to every goal and every learner.</p>
+        <h2 class="section-title" data-i18n="courses-title">Find Your <span class="accent">Perfect Course</span></h2>
+        <p class="section-subtitle" data-i18n="courses-sub">From beginner to advanced, we have a programme tailored to every goal and every learner.</p>
       </div>
       <div class="course-filters reveal">
         <button class="filter-btn active" data-filter="all">All</button>
@@ -210,7 +219,7 @@
             <span class="course-duration">⏱ 3 Months</span>
             <h4>Beginner English</h4>
             <p>Build a solid foundation in reading, writing, speaking, and listening from the very start.</p>
-            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+            <a href="#contact" class="btn-card" data-i18n="learn-more">Learn More <span>→</span></a>
           </div>
         </div>
         <div class="course-card reveal" data-category="general">
@@ -219,7 +228,7 @@
             <span class="course-duration">⏱ 4 Months</span>
             <h4>Intermediate English</h4>
             <p>Expand your vocabulary and tackle complex grammar structures with confidence.</p>
-            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+            <a href="#contact" class="btn-card" data-i18n="learn-more">Learn More <span>→</span></a>
           </div>
         </div>
         <div class="course-card reveal" data-category="general">
@@ -228,7 +237,7 @@
             <span class="course-duration">⏱ 5 Months</span>
             <h4>Advanced English</h4>
             <p>Achieve near-native fluency with nuanced expression, debate, and academic writing skills.</p>
-            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+            <a href="#contact" class="btn-card" data-i18n="learn-more">Learn More <span>→</span></a>
           </div>
         </div>
         <div class="course-card reveal" data-category="specialist">
@@ -237,7 +246,7 @@
             <span class="course-duration">⏱ 3 Months</span>
             <h4>Business English</h4>
             <p>Master professional communication, negotiations, presentations, and corporate writing.</p>
-            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+            <a href="#contact" class="btn-card" data-i18n="learn-more">Learn More <span>→</span></a>
           </div>
         </div>
         <div class="course-card reveal" data-category="exam">
@@ -246,7 +255,7 @@
             <span class="course-duration">⏱ 2 Months</span>
             <h4>IELTS Preparation</h4>
             <p>Targeted exam techniques, timed practice, and personalised feedback to hit your band score.</p>
-            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+            <a href="#contact" class="btn-card" data-i18n="learn-more">Learn More <span>→</span></a>
           </div>
         </div>
         <div class="course-card reveal" data-category="exam">
@@ -255,7 +264,7 @@
             <span class="course-duration">⏱ 2 Months</span>
             <h4>TOEFL Preparation</h4>
             <p>Comprehensive TOEFL iBT coaching covering reading, listening, speaking, and writing tasks.</p>
-            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+            <a href="#contact" class="btn-card" data-i18n="learn-more">Learn More <span>→</span></a>
           </div>
         </div>
         <div class="course-card reveal" data-category="specialist">
@@ -264,7 +273,7 @@
             <span class="course-duration">⏱ 2 Months</span>
             <h4>Conversation Courses</h4>
             <p>Weekly live debate circles, roleplay, and discussion topics that push your spoken English.</p>
-            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+            <a href="#contact" class="btn-card" data-i18n="learn-more">Learn More <span>→</span></a>
           </div>
         </div>
         <div class="course-card reveal" data-category="general">
@@ -273,7 +282,7 @@
             <span class="course-duration">⏱ 2 Months</span>
             <h4>Grammar Mastery</h4>
             <p>A deep-dive into English grammar rules, exceptions, and real-world application.</p>
-            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+            <a href="#contact" class="btn-card" data-i18n="learn-more">Learn More <span>→</span></a>
           </div>
         </div>
         <div class="course-card reveal" data-category="specialist">
@@ -282,7 +291,7 @@
             <span class="course-duration">⏱ 3 Months</span>
             <h4>Speaking Fluency</h4>
             <p>Intensive accent reduction, intonation coaching, and fluency training with native tutors.</p>
-            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+            <a href="#contact" class="btn-card" data-i18n="learn-more">Learn More <span>→</span></a>
           </div>
         </div>
         <div class="course-card reveal" data-category="specialist">
@@ -291,7 +300,7 @@
             <span class="course-duration">⏱ 4 Months</span>
             <h4>Kids English Programme</h4>
             <p>Fun, story-based learning for children aged 5–12 that builds language skills through play.</p>
-            <a href="#contact" class="btn-card">Learn More <span>→</span></a>
+            <a href="#contact" class="btn-card" data-i18n="learn-more">Learn More <span>→</span></a>
           </div>
         </div>
       </div>
@@ -303,8 +312,8 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Our Educators</span>
-        <h2 class="section-title">Meet Our <span class="accent">Expert Teachers</span></h2>
-        <p class="section-subtitle">Our instructors are more than teachers — they are mentors who invest in every student's personal journey.</p>
+        <h2 class="section-title" data-i18n="teachers-title">Meet Our <span class="accent">Expert Teachers</span></h2>
+        <p class="section-subtitle" data-i18n="teachers-sub">Our instructors are more than teachers — they are mentors who invest in every student's personal journey.</p>
       </div>
       <div class="teachers-grid">
         <div class="teacher-card reveal">
@@ -352,8 +361,8 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Success Stories</span>
-        <h2 class="section-title">What Our <span class="accent">Students Say</span></h2>
-        <p class="section-subtitle">Real stories from real students who transformed their English — and their lives.</p>
+        <h2 class="section-title" data-i18n="testimonials-title">What Our <span class="accent">Students Say</span></h2>
+        <p class="section-subtitle" data-i18n="testimonials-sub">Real stories from real students who transformed their English — and their lives.</p>
       </div>
       <div class="testimonial-wrapper reveal">
         <div class="testimonial-track" id="testimonial-track">
@@ -412,16 +421,16 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Investment in Yourself</span>
-        <h2 class="section-title">Simple, Transparent <span class="accent">Pricing</span></h2>
-        <p class="section-subtitle">Choose the plan that matches your goals. No hidden fees. Cancel anytime.</p>
+        <h2 class="section-title" data-i18n="pricing-title">Simple, Transparent <span class="accent">Pricing</span></h2>
+        <p class="section-subtitle" data-i18n="pricing-sub">Choose the plan that matches your goals. No hidden fees. Cancel anytime.</p>
       </div>
       <div class="pricing-grid">
         <div class="price-card reveal">
           <div class="price-header">
-            <h4>Basic</h4>
-            <p>Start your English journey</p>
+            <h4 data-i18n="price-starter">Basic</h4>
+            <p data-i18n="price-starter-desc">Start your English journey</p>
           </div>
-          <div class="price-amount"><span class="currency">$</span>49<span class="period">/mo</span></div>
+          <div class="price-amount"><span class="currency">$</span>49<span class="period" data-i18n="pricing-month">/mo</span></div>
           <ul class="price-features">
             <li>✓ 4 Live Classes / Month</li>
             <li>✓ Beginner Course Access</li>
@@ -431,15 +440,15 @@
             <li class="disabled">✗ Exam Preparation</li>
             <li class="disabled">✗ 1-on-1 Coaching</li>
           </ul>
-          <a href="#contact" class="btn btn-outline">Join Now</a>
+          <a href="#contact" class="btn btn-outline" data-i18n="apply-btn">Join Now</a>
         </div>
         <div class="price-card price-featured reveal">
-          <div class="price-badge">Most Popular</div>
+          <div class="price-badge" data-i18n="pricing-popular">Most Popular</div>
           <div class="price-header">
-            <h4>Professional</h4>
-            <p>For serious learners</p>
+            <h4 data-i18n="price-pro">Professional</h4>
+            <p data-i18n="price-pro-desc">For serious learners</p>
           </div>
-          <div class="price-amount"><span class="currency">$</span>99<span class="period">/mo</span></div>
+          <div class="price-amount"><span class="currency">$</span>99<span class="period" data-i18n="pricing-month">/mo</span></div>
           <ul class="price-features">
             <li>✓ 12 Live Classes / Month</li>
             <li>✓ All Course Levels</li>
@@ -449,14 +458,14 @@
             <li>✓ Certificate Upon Completion</li>
             <li class="disabled">✗ 1-on-1 Coaching</li>
           </ul>
-          <a href="#contact" class="btn btn-primary">Join Now</a>
+          <a href="#contact" class="btn btn-primary" data-i18n="apply-btn">Join Now</a>
         </div>
         <div class="price-card reveal">
           <div class="price-header">
-            <h4>Premium</h4>
-            <p>The ultimate experience</p>
+            <h4 data-i18n="price-premium">Premium</h4>
+            <p data-i18n="price-premium-desc">The ultimate experience</p>
           </div>
-          <div class="price-amount"><span class="currency">$</span>179<span class="period">/mo</span></div>
+          <div class="price-amount"><span class="currency">$</span>179<span class="period" data-i18n="pricing-month">/mo</span></div>
           <ul class="price-features">
             <li>✓ Unlimited Live Classes</li>
             <li>✓ All Courses + Specialist</li>
@@ -466,7 +475,7 @@
             <li>✓ Priority Support 24/7</li>
             <li>✓ Official Certificate + Alumni</li>
           </ul>
-          <a href="#contact" class="btn btn-outline">Join Now</a>
+          <a href="#contact" class="btn btn-outline" data-i18n="apply-btn">Join Now</a>
         </div>
       </div>
     </div>
@@ -503,8 +512,8 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Got Questions?</span>
-        <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
-        <p class="section-subtitle">Everything you need to know before taking the first step.</p>
+        <h2 class="section-title" data-i18n="faq-title">Frequently Asked <span class="accent">Questions</span></h2>
+        <p class="section-subtitle" data-i18n="faq-sub">Everything you need to know before taking the first step.</p>
       </div>
       <div class="faq-list reveal">
         <div class="faq-item">
@@ -544,8 +553,8 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Get In Touch</span>
-        <h2 class="section-title">Start Your Journey <span class="accent">Today</span></h2>
-        <p class="section-subtitle">Fill in the form and our admissions team will reach out within 24 hours.</p>
+        <h2 class="section-title" data-i18n="contact-title">Start Your Journey <span class="accent">Today</span></h2>
+        <p class="section-subtitle" data-i18n="contact-sub">Fill in the form and our admissions team will reach out within 24 hours.</p>
       </div>
       <div class="contact-grid">
         <div class="contact-info reveal">
@@ -586,21 +595,21 @@
         <form class="contact-form reveal" id="contact-form" novalidate>
           <div class="form-row">
             <div class="form-group">
-              <label for="cf-name">Full Name</label>
+              <label for="cf-name" data-i18n="contact-name">Full Name</label>
               <input type="text" id="cf-name" name="name" placeholder="Your full name" required />
             </div>
             <div class="form-group">
-              <label for="cf-email">Email Address</label>
+              <label for="cf-email" data-i18n="contact-email">Email Address</label>
               <input type="email" id="cf-email" name="email" placeholder="your@email.com" required />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="cf-phone">Phone Number</label>
+              <label for="cf-phone" data-i18n="contact-phone">Phone Number</label>
               <input type="tel" id="cf-phone" name="phone" placeholder="+1 (555) 000-0000" />
             </div>
             <div class="form-group">
-              <label for="cf-course">Course of Interest</label>
+              <label for="cf-course" data-i18n="contact-course">Course of Interest</label>
               <select id="cf-course" name="course">
                 <option value="">Select a course...</option>
                 <option>Beginner English</option>
@@ -618,7 +627,7 @@
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="cf-level">Current English Level</label>
+              <label for="cf-level" data-i18n="contact-level">Current English Level</label>
               <select id="cf-level" name="level">
                 <option value="">Select your level...</option>
                 <option>Beginner</option>
@@ -628,7 +637,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="cf-hear">Where did you hear about us?</label>
+              <label for="cf-hear" data-i18n="contact-hear">Where did you hear about us?</label>
               <select id="cf-hear" name="hear">
                 <option value="">Select option...</option>
                 <option>Social Media</option>
@@ -641,7 +650,7 @@
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="cf-goal">What is your main goal?</label>
+              <label for="cf-goal" data-i18n="contact-goal">What is your main goal?</label>
               <select id="cf-goal" name="goal">
                 <option value="">Select goal...</option>
                 <option>Academic Studies</option>
@@ -652,7 +661,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="cf-schedule">Preferred Schedule</label>
+              <label for="cf-schedule" data-i18n="contact-schedule">Preferred Schedule</label>
               <select id="cf-schedule" name="schedule">
                 <option value="">Select schedule...</option>
                 <option>Morning</option>
@@ -664,15 +673,15 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="cf-message">Additional Message</label>
+            <label for="cf-message" data-i18n="contact-message">Additional Message</label>
             <textarea id="cf-message" name="message" rows="4" placeholder="Tell us about your learning goals, any specific needs, or questions..."></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-full">
-            <span>Send Application</span>
+            <span data-i18n="contact-send">Send Application</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </button>
           <p class="form-note">🔒 Your information is safe. We never share your data with third parties.</p>
-          <div class="form-success" id="form-success">✅ Thank you! We'll be in touch within 24 hours.</div>
+          <div class="form-success" id="form-success" data-i18n="contact-success">✅ Thank you! We'll be in touch within 24 hours.</div>
         </form>
       </div>
     </div>
@@ -735,18 +744,18 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 BBC English Academy. All rights reserved.</p>
+        <p data-i18n="footer-rights">&copy; 2025 BBC English Academy. All rights reserved.</p>
         <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
+          <a href="#" data-i18n="footer-privacy">Privacy Policy</a>
+          <a href="#" data-i18n="footer-terms">Terms of Service</a>
+          <a href="#" data-i18n="footer-cookie">Cookie Policy</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Back to top -->
-  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top" data-i18n="back-to-top">↑</button>
 
   <script src="script.js"></script>
 </body>
