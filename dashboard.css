@@ -634,6 +634,19 @@ body {
     margin-left: 0;
     padding: 24px;
   }
+  .nav-user {
+    gap: 8px;
+  }
+  .nav-user #user-name {
+    display: none;
+  }
+  .nav-user ul {
+    gap: 4px;
+  }
+  .nav-icon-btn {
+    padding: 3px 8px;
+    font-size: 0.65rem;
+  }
   .stats-grid {
     grid-template-columns: 1fr;
   }

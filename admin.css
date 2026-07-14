@@ -45,7 +45,7 @@ html[dir="rtl"] .admin-sidebar {
   border-right: none;
   border-left: 1px solid var(--border);
 }
-html[dir="rtl"] .admin-content {
+html[dir="rtl"] .admin-main {
   margin-left: 0;
   margin-right: 260px;
 }
@@ -59,7 +59,7 @@ html[dir="rtl"] .admin-link {
   html[dir="rtl"] .admin-sidebar.open {
     right: 0; left: auto;
   }
-  html[dir="rtl"] .admin-content {
+  html[dir="rtl"] .admin-main {
     margin-right: 0;
   }
 }
@@ -418,6 +418,18 @@ html[dir="rtl"] .admin-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+  }
+  .nav-user {
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .nav-user span:first-child {
+    display: none;
+  }
+  .nav-icon-btn {
+    padding: 3px 8px;
+    font-size: 0.65rem;
   }
   .admin-main {
     margin-left: 0;
