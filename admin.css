@@ -457,6 +457,15 @@ html[dir="rtl"] .admin-link {
   }
 }
 
+/* Sidebar Toggles */
+.sidebar-toggles {
+  display: flex;
+  gap: 6px;
+  padding: 16px 18px;
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+}
+
 /* Theme & Language Toggle */
 .nav-icon-btn {
   background: transparent;

@@ -22,12 +22,6 @@
       <div class="nav-user">
         <span id="user-name">Loading...</span>
         <button class="btn-logout" id="btn-logout" data-i18n="nav-logout">Logout</button>
-        <ul style="display:flex;list-style:none;gap:8px;align-items:center;margin:0;padding:0">
-          <li><button class="nav-icon-btn lang-btn active" data-lang="en" onclick="setLang('en')" title="English">EN</button></li>
-          <li><button class="nav-icon-btn lang-btn" data-lang="ar" onclick="setLang('ar')" title="العربية">AR</button></li>
-          <li><button class="nav-icon-btn theme-btn active" data-theme="dark" onclick="setTheme('dark')" title="Dark">🌙</button></li>
-          <li><button class="nav-icon-btn theme-btn" data-theme="light" onclick="setTheme('light')" title="Light">☀️</button></li>
-        </ul>
       </div>
     </div>
   </nav>
@@ -51,6 +45,12 @@
           <span class="icon">📢</span>
           <span data-i18n="dash-announce">Announcements</span>
         </a>
+        <div class="sidebar-toggles">
+          <button class="nav-icon-btn lang-btn active" data-lang="en" onclick="setLang('en')" title="English">EN</button>
+          <button class="nav-icon-btn lang-btn" data-lang="ar" onclick="setLang('ar')" title="العربية">AR</button>
+          <button class="nav-icon-btn theme-btn active" data-theme="dark" onclick="setTheme('dark')" title="Dark">🌙</button>
+          <button class="nav-icon-btn theme-btn" data-theme="light" onclick="setTheme('light')" title="Light">☀️</button>
+        </div>
       </nav>
     </aside>
 
