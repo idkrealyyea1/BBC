@@ -427,23 +427,22 @@ document.querySelectorAll('.filter-btn').forEach(function (btn) {
   var items    = document.querySelectorAll('.gallery-item');
   var current  = 0;
 
+  var images = [
+    'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1200&h=800&fit=crop',
+    'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=800&fit=crop',
+    'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&h=800&fit=crop',
+    'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&h=800&fit=crop',
+    'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=1200&h=800&fit=crop',
+    'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&h=800&fit=crop'
+  ];
   var labels = [
     'Modern Classrooms','Speaking Labs','Student Workshops',
     'Graduation Ceremony','Group Activities','Library & Study Hub'
   ];
-  var gradients = [
-    'linear-gradient(160deg,#3d0000,#800000,#500000)',
-    'linear-gradient(160deg,#001840,#003580,#001540)',
-    'linear-gradient(160deg,#0f3500,#246000,#0a2800)',
-    'linear-gradient(160deg,#3d1500,#803000,#502000)',
-    'linear-gradient(160deg,#1a0040,#3a0080,#120030)',
-    'linear-gradient(160deg,#003030,#006060,#002020)'
-  ];
 
   function open(idx) {
     current = idx;
-    lbContent.style.background = gradients[idx % gradients.length];
-    lbContent.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;"><span style="font-size:3rem;opacity:0.3;">🏛️</span><p style="font-size:1.1rem;font-weight:600;color:#fff;letter-spacing:0.06em;">' + labels[idx] + '</p><p style="color:#888;font-size:0.82rem;">BBC English Academy</p></div>';
+    lbContent.innerHTML = '<img src="' + images[idx] + '" alt="' + labels[idx] + '" style="max-width:100%;max-height:80vh;object-fit:contain;"><p style="margin-top:16px;font-size:1.1rem;font-weight:600;color:#fff;letter-spacing:0.06em;">' + labels[idx] + '</p><p style="color:#888;font-size:0.82rem;">BBC English Academy</p>';
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
   }

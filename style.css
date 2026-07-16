@@ -542,14 +542,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .testi-author { display: flex; align-items: center; gap: 14px; }
 .testi-avatar {
-  width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0;
+  width: 48px; height: 48px; border-radius: 50%;
+  background-size: cover; background-position: center;
+  flex-shrink: 0;
   border: 2px solid rgba(214,0,0,0.3);
 }
-.ta-1 { background: linear-gradient(135deg,#3d1a00,#7a3300); }
-.ta-2 { background: linear-gradient(135deg,#001a2e,#003366); }
-.ta-3 { background: linear-gradient(135deg,#1a0033,#360066); }
-.ta-4 { background: linear-gradient(135deg,#003322,#006644); }
-.ta-5 { background: linear-gradient(135deg,#1a1500,#3d3300); }
 .testi-author strong { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 2px; }
 .testi-author span { font-size: 0.77rem; color: var(--red); }
 .testi-controls {
